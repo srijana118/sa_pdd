@@ -1,0 +1,464 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2ecc71;
+    --secondary-color: #27ae60;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --text-color: #34495e;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+}
+
+.nav-logo h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 6px 0;
+    position: relative;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+    padding: 6px 18px !important;
+    border-radius: 5px;
+}
+
+.btn-login::after {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: 0.3s;
+}
+
+/* Hero About Section */
+.hero-about {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-about p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* Section Styles */
+section {
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+/* Mission Section (Centered) */
+.mission-section {
+    background-color: var(--white);
+}
+
+.content-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.content-text h2 {
+    color: var(--dark-color);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.content-text p {
+    color: var(--text-color);
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Technology Section */
+.technology-section {
+    background-color: var(--light-color);
+    padding: 50px 20px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tech-card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.tech-card h3 {
+    color: var(--dark-color);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.tech-card p {
+    color: var(--text-color);
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Detection Section */
+.detection-section {
+    background-color: var(--white);
+    padding: 50px 20px;
+}
+
+.disease-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.disease-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    padding-bottom: 15px;
+}
+
+.disease-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.disease-header {
+    padding: 5px;
+    text-align: center;
+    color: var(--white);
+}
+
+.early-blight-card .disease-header {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    padding: 18px;
+}
+
+.late-blight-card .disease-header {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    padding: 18px;
+}
+
+.healthy-card .disease-header {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    padding: 18px;
+}
+
+.disease-header h3 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.disease-emoji {
+    font-size: 2.3rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.disease-content {
+    padding: 25px;
+    background-color: var(--white);
+}
+
+.disease-content p {
+    margin-bottom: 10px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Future Plans Section */
+.future-section {
+    background-color: var(--white);
+    padding: 50px 20px;
+}
+
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.future-card {
+    background-color: var(--light-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.future-card:hover {
+    background-color: #e0e7e9;
+    transform: translateY(-4px);
+}
+
+.future-icon {
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+}
+
+.future-card h3 {
+    color: var(--dark-color);
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.future-card p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Team Section */
+.team-section {
+    background-color: var(--light-color);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.team-description {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.value-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+.btn-large:hover {
+    background-color: var(--light-color);
+    transform: scale(1.05);
+}
+/* Footer */
+.footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 65px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hero-about h1 {
+        font-size: 2rem;
+    }
+
+    .hero-about p {
+        font-size: 1.1rem;
+    }
+
+    .image-placeholder {
+        max-width: 200px;
+        font-size: 5rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
